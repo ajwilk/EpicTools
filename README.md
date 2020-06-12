@@ -29,7 +29,7 @@ The count matrices are now stored as a list that can be processed by ```EpicPre(
 EpicPreHS(cm_name, min.counts = 1e3, max.counts = 15e3, max.complexity = 0.75, max.percent.mito = 0.2, max.percent.rRNA = 0.2)
 EpicPreMN(cm_name, min.counts = 1e3, max.counts = 15e3, max.complexity = 0.75, max.percent.mito = 0.001)
 ```
-Note that the input to ```EpicPre()``` must be named to end with ".cm" to ensure proper transferring of cell names. This function parses and processes dropEst objects that must contain exonic, intronic, and spanning count matrices, created using the -V flag.
+This function parses and processes dropEst objects that must contain exonic, intronic, and spanning count matrices, created using the -V flag.
 
 ```
 cm.pp <- mapply(EpicPreHS, cm.files, orig.ident = names(cm.files), SIMPLIFY = F)

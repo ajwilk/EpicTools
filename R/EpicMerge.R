@@ -169,9 +169,7 @@ mergeCM <- function(cm_list = NULL, type = "emat") {
 
 
 EpicPreHS <- function(cm_name, min.counts = 1e3, max.counts = 15e3, max.doublet.ratio = 0.75, max.percent.mito = 0.2, max.percent.rRNA = 0.2, orig.ident = NULL){
-  if (any(grep(".cm$", deparse(substitute(cm_name))))==FALSE){
-    warning("The resulting cell names will be strange if the input object name does not end with '.cm'")
-  }
+
   cm_name.emat <- cm_name$exon
   cm_name.emat <- cm_name.emat[,Matrix::colSums(cm_name.emat)>=min.counts]
   cm_name.emat <- cm_name.emat[,Matrix::colSums(cm_name.emat)<=max.counts]
