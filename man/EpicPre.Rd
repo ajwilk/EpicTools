@@ -48,5 +48,6 @@ Aaron J. Wilk
 \examples{
 EpicPreMN(late_w00.cm, min.counts = 1e3, max.counts = 15e3, max.complexity = 0.75, max.percent.mito = 0.001)
 EpicPreHS(NK_only.cm, min.counts = 1e3, max.counts = 15e3, max.complexity = 0.75, max.percent.mito = 0.2, max.percent.rRNA = 0.2)
+}
 
 \keyword{ ~pre-processing }
