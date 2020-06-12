@@ -1,18 +1,21 @@
-\name{EpicMerge}
-\alias{EpicMerge}
+\name{mergeCM}
+\alias{mergeCM}
 \title{
 Fast and iterative merging of sparse matrices
 }
 \description{
-EpicMerge iteratively merges up to 12 dgCMatrix objects in a single command.
+mergeCM accepts a list of up to 48 count matrices and uses EpicMerge to merge them into one final count matrix.
 }
 \usage{
-EpicMerge(x, ...)
+mergeCM(count_matrix.list, type = c("emat", "nmat"))
 }
 \arguments{
   \item{x}{
-A matrix of matrix-like object
+A list of dgCMatrix objects
 }
+  \item{type}{
+  Character indicating which type of count matrices to merge.
+  }
 }
 \details{
 This function will keep all colnames and rownames present in the input matrices and fill blank measurements with zeros.
@@ -24,7 +27,7 @@ Returns a merged dgCMatrix.
 Aaron J. Wilk
 }
 \examples{
-EpicMerge(emat1, emat2, emat3)
+mergeCM(count_matrix.list, type = c("emat", "nmat"))
 }
 
 \keyword{ ~merge }% use one of  RShowDoc("KEYWORDS")
