@@ -27,4 +27,4 @@ Aaron J. Wilk
 EpicMerge(emat1, emat2, emat3)
 }
 
-\keyword{ ~merge }% use one of  RShowDoc("KEYWORDS")
+\keyword{ ~merge }

@@ -30,4 +30,4 @@ Aaron J. Wilk
 mergeCM(count_matrix.list, type = c("emat", "nmat"))
 }
 
-\keyword{ ~merge }% use one of  RShowDoc("KEYWORDS")
+\keyword{ ~merge }
