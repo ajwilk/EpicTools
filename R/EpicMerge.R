@@ -164,6 +164,25 @@ mergeCM <- function(cm_list = NULL, type = "emat") {
     final.4 <- do.call(myMerge, args = unlisted.sort[37:length(unlisted.sort)])
     final <- do.call(myMerge, args = list(final.1, final.2, final.3, final.4))
   }
+  if (between(length(unlisted.sort), 49, 60)){
+    names(unlisted.sort) <- NULL
+    final.1 <- do.call(myMerge, args = unlisted.sort[1:12])
+    final.2 <- do.call(myMerge, args = unlisted.sort[13:24])
+    final.3 <- do.call(myMerge, args = unlisted.sort[25:36])
+    final.4 <- do.call(myMerge, args = unlisted.sort[37:48])
+    final.5 <- do.call(myMerge, args = unlisted.sort[49:length(unlisted.sort)])
+    final <- do.call(myMerge, args = list(final.1, final.2, final.3, final.4, final.5))
+  }
+  if (between(length(unlisted.sort), 61, 72)){
+    names(unlisted.sort) <- NULL
+    final.1 <- do.call(myMerge, args = unlisted.sort[1:12])
+    final.2 <- do.call(myMerge, args = unlisted.sort[13:24])
+    final.3 <- do.call(myMerge, args = unlisted.sort[25:36])
+    final.4 <- do.call(myMerge, args = unlisted.sort[37:48])
+    final.5 <- do.call(myMerge, args = unlisted.sort[49:60])
+    final.6 <- do.call(myMerge, args = unlisted.sort[61:length(unlisted.sort)])
+    final <- do.call(myMerge, args = list(final.1, final.2, final.3, final.4, final.5, final.6))
+  }
   return(final)
 }
 
