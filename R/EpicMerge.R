@@ -218,6 +218,7 @@ EpicPreHS <- function(cm_name, min.counts = 1e3, max.counts = 15e3, max.doublet.
   else {
     names.bcs.cm_name = as.data.frame(cbind(bcs.cm_name.emat, paste(rep(orig.ident,ncol(cm_name.emat)), c(1:ncol(cm_name.emat)), sep=".")))
   }
+  names.bcs.cm_name$V2 <- paste(names.bcs.cm_name$V2,names.bcs.cm_name$bcs.cm_name.emat,sep = "_")
   colnames(names.bcs.cm_name) <- c("bcs", "cm_name")
   cm_name.nmat.bcs <- as.data.frame(colnames(cm_name.nmat))
   colnames(cm_name.nmat.bcs) <- "bcs"
@@ -266,6 +267,7 @@ EpicPreMM <- function(cm_name, min.counts = 1e3, max.counts = 15e3, max.doublet.
   else {
     names.bcs.cm_name = as.data.frame(cbind(bcs.cm_name.emat, paste(rep(orig.ident,ncol(cm_name.emat)), c(1:ncol(cm_name.emat)), sep=".")))
   }
+  names.bcs.cm_name$V2 <- paste(names.bcs.cm_name$V2,names.bcs.cm_name$bcs.cm_name.emat,sep = "_")
   colnames(names.bcs.cm_name) <- c("bcs", "cm_name")
   cm_name.nmat.bcs <- as.data.frame(colnames(cm_name.nmat))
   colnames(cm_name.nmat.bcs) <- "bcs"
@@ -313,6 +315,7 @@ EpicPreMN <- function(cm_name, min.counts = 1e3, max.counts = 15e3, max.doublet.
   else {
     names.bcs.cm_name = as.data.frame(cbind(bcs.cm_name.emat, paste(rep(orig.ident,ncol(cm_name.emat)), c(1:ncol(cm_name.emat)), sep=".")))
   }
+  names.bcs.cm_name$V2 <- paste(names.bcs.cm_name$V2,names.bcs.cm_name$bcs.cm_name.emat,sep = "_")
   colnames(names.bcs.cm_name) <- c("bcs", "cm_name")
   cm_name.nmat.bcs <- as.data.frame(colnames(cm_name.nmat))
   colnames(cm_name.nmat.bcs) <- "bcs"
