@@ -42,4 +42,4 @@ combined.emat <- mergeCM(cm.pp, type = "emat")
 combined.nmat <- mergeCM(cm.pp, type = "nmat")
 ```
 
-```combined.emat``` is now ready to be used as an input count matrix for Seurat. Cell names no longer contain cell barcodes, but rather contain the name of each ```cm_file``` followed by "." followed by a number ```1:ncol(cm_file)```.
+```combined.emat``` is now ready to be used as an input count matrix for Seurat. Cell names contain  the name of each ```cm_file``` followed by "." followed by a number ```1:ncol(cm_file)``` followed by "_" and the cell barcode. 
