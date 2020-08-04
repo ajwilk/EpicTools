@@ -188,23 +188,22 @@ mergeCM <- function(cm_list = NULL, type = "emat") {
 
 
 EpicPreHS <- function(cm_name, min.counts = 1e3, max.counts = 15e3, max.doublet.ratio = 0.75, max.percent.mito = 0.2, max.percent.rRNA = 0.2, orig.ident = NULL){
-  sample_name <- deparse(substitute(cm_name))
   cm_name.emat <- cm_name$exon
   cm_name.emat <- cm_name.emat[,Matrix::colSums(cm_name.emat)>=min.counts]
   cm_name.emat <- cm_name.emat[,Matrix::colSums(cm_name.emat)<=max.counts]
 
   cm_name.doublet <- (Matrix::colSums(cm_name.emat != 0)/Matrix::colSums(cm_name.emat))
-  hist(cm_name.doublet, xlim = c(0, 1), breaks = 50, main = paste0(sample_name, " Complexity"))
+  hist(cm_name.doublet, xlim = c(0, 1), breaks = 50, main = paste0(orig.ident, " Complexity"))
   cm_name.emat <- cm_name.emat[,cm_name.doublet<max.doublet.ratio]
 
   cm_name.mito.genes = c(grep("^MT-", rownames(cm_name.emat), value = T), grep("^MTR", rownames(cm_name.emat), value = T))
   cm_name.percent.mito = Matrix::colSums(cm_name.emat[cm_name.mito.genes,])/Matrix::colSums(cm_name.emat)
-  hist(cm_name.percent.mito, breaks = 50, main = paste0(sample_name, " % mitochondrial"))
+  hist(cm_name.percent.mito, breaks = 50, main = paste0(orig.ident, " % mitochondrial"))
   cm_name.emat <- cm_name.emat[,cm_name.percent.mito<max.percent.mito]
 
   cm_name.rRNA.genes = c(grep("^RPL", rownames(cm_name.emat), value = T),grep("^RPS", rownames(cm_name.emat), value = T))
   cm_name.percent.rRNA = Matrix::colSums(cm_name.emat[cm_name.rRNA.genes,])/Matrix::colSums(cm_name.emat)
-  hist(cm_name.percent.rRNA, xlim = c(0, 1), breaks = 50, main = paste0(sample_name, " % ribosomal"))
+  hist(cm_name.percent.rRNA, xlim = c(0, 1), breaks = 50, main = paste0(orig.ident, " % ribosomal"))
   cm_name.emat <- cm_name.emat[,cm_name.percent.rRNA<max.percent.rRNA]
 
   cm_name.nmat <- cm_name$intron
