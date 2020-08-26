@@ -141,47 +141,47 @@ mergeCM <- function(cm_list = NULL, type = "emat") {
   unlisted.sort <- unlisted[grep(type, names(unlisted))]
   if (length(unlisted.sort)<=12){
     names(unlisted.sort) <- NULL
-    final <- do.call(myMerge, args = unlisted.sort)
+    final <- do.call(EpicMerge, args = unlisted.sort)
   }
   if (between(length(unlisted.sort), 13, 24)){
     names(unlisted.sort) <- NULL
-    final.1 <- do.call(myMerge, args = unlisted.sort[1:12])
-    final.2 <- do.call(myMerge, args = unlisted.sort[13:length(unlisted.sort)])
-    final <- do.call(myMerge, args = list(final.1, final.2))
+    final.1 <- do.call(EpicMerge, args = unlisted.sort[1:12])
+    final.2 <- do.call(EpicMerge, args = unlisted.sort[13:length(unlisted.sort)])
+    final <- do.call(EpicMerge, args = list(final.1, final.2))
   }
   if (between(length(unlisted.sort), 25, 36)){
     names(unlisted.sort) <- NULL
-    final.1 <- do.call(myMerge, args = unlisted.sort[1:12])
-    final.2 <- do.call(myMerge, args = unlisted.sort[13:24])
-    final.3 <- do.call(myMerge, args = unlisted.sort[25:length(unlisted.sort)])
-    final <- do.call(myMerge, args = list(final.1, final.2, final.3))
+    final.1 <- do.call(EpicMerge, args = unlisted.sort[1:12])
+    final.2 <- do.call(EpicMerge, args = unlisted.sort[13:24])
+    final.3 <- do.call(EpicMerge, args = unlisted.sort[25:length(unlisted.sort)])
+    final <- do.call(EpicMerge, args = list(final.1, final.2, final.3))
   }
   if (between(length(unlisted.sort), 37, 48)){
     names(unlisted.sort) <- NULL
-    final.1 <- do.call(myMerge, args = unlisted.sort[1:12])
-    final.2 <- do.call(myMerge, args = unlisted.sort[13:24])
-    final.3 <- do.call(myMerge, args = unlisted.sort[25:36])
-    final.4 <- do.call(myMerge, args = unlisted.sort[37:length(unlisted.sort)])
-    final <- do.call(myMerge, args = list(final.1, final.2, final.3, final.4))
+    final.1 <- do.call(EpicMerge, args = unlisted.sort[1:12])
+    final.2 <- do.call(EpicMerge, args = unlisted.sort[13:24])
+    final.3 <- do.call(EpicMerge, args = unlisted.sort[25:36])
+    final.4 <- do.call(EpicMerge, args = unlisted.sort[37:length(unlisted.sort)])
+    final <- do.call(EpicMerge, args = list(final.1, final.2, final.3, final.4))
   }
   if (between(length(unlisted.sort), 49, 60)){
     names(unlisted.sort) <- NULL
-    final.1 <- do.call(myMerge, args = unlisted.sort[1:12])
-    final.2 <- do.call(myMerge, args = unlisted.sort[13:24])
-    final.3 <- do.call(myMerge, args = unlisted.sort[25:36])
-    final.4 <- do.call(myMerge, args = unlisted.sort[37:48])
-    final.5 <- do.call(myMerge, args = unlisted.sort[49:length(unlisted.sort)])
-    final <- do.call(myMerge, args = list(final.1, final.2, final.3, final.4, final.5))
+    final.1 <- do.call(EpicMerge, args = unlisted.sort[1:12])
+    final.2 <- do.call(EpicMerge, args = unlisted.sort[13:24])
+    final.3 <- do.call(EpicMerge, args = unlisted.sort[25:36])
+    final.4 <- do.call(EpicMerge, args = unlisted.sort[37:48])
+    final.5 <- do.call(EpicMerge, args = unlisted.sort[49:length(unlisted.sort)])
+    final <- do.call(EpicMerge, args = list(final.1, final.2, final.3, final.4, final.5))
   }
   if (between(length(unlisted.sort), 61, 72)){
     names(unlisted.sort) <- NULL
-    final.1 <- do.call(myMerge, args = unlisted.sort[1:12])
-    final.2 <- do.call(myMerge, args = unlisted.sort[13:24])
-    final.3 <- do.call(myMerge, args = unlisted.sort[25:36])
-    final.4 <- do.call(myMerge, args = unlisted.sort[37:48])
-    final.5 <- do.call(myMerge, args = unlisted.sort[49:60])
-    final.6 <- do.call(myMerge, args = unlisted.sort[61:length(unlisted.sort)])
-    final <- do.call(myMerge, args = list(final.1, final.2, final.3, final.4, final.5, final.6))
+    final.1 <- do.call(EpicMerge, args = unlisted.sort[1:12])
+    final.2 <- do.call(EpicMerge, args = unlisted.sort[13:24])
+    final.3 <- do.call(EpicMerge, args = unlisted.sort[25:36])
+    final.4 <- do.call(EpicMerge, args = unlisted.sort[37:48])
+    final.5 <- do.call(EpicMerge, args = unlisted.sort[49:60])
+    final.6 <- do.call(EpicMerge, args = unlisted.sort[61:length(unlisted.sort)])
+    final <- do.call(EpicMerge, args = list(final.1, final.2, final.3, final.4, final.5, final.6))
   }
   return(final)
 }
