@@ -138,7 +138,12 @@ EpicMerge <- function(x,...){
 
 mergeCM <- function(cm_list = NULL, type = "emat") {
   unlisted <- unlist(cm_list)
-  unlisted.sort <- unlisted[grep(type, names(unlisted))]
+  if(is.null(type)){
+    unlisted.sort <- unlisted
+  }
+  else{
+    unlisted.sort <- unlisted[grep(type, names(unlisted))]
+  }
   if (length(unlisted.sort)<=12){
     names(unlisted.sort) <- NULL
     final <- do.call(EpicMerge, args = unlisted.sort)
