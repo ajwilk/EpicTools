@@ -1,4 +1,7 @@
 # EpicTools
+
+NOTE: this repository is no longer actively maintained
+
 Tools for pre-processing of count matrices for droplet-based scRNA-seq analysis
 
 This package contains several functions that process scRNA-seq count matrices built by dropEst before initialization of a Seurat object for post-processing. 
